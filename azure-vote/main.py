@@ -87,13 +87,13 @@ else:
     title = app.config['TITLE']
 
 # Redis Connection
-r = redis.Redis()
+#r = redis.Redis()
 
 # Redis configurations
-#redis_server = os.environ['REDIS']
+redis_server = os.environ['REDIS']
 
 # Redis Connection
-"""try:
+try:
     if "REDIS_PWD" in os.environ:
         r = redis.StrictRedis(host=redis_server,
                         port=6379,
@@ -103,7 +103,6 @@ r = redis.Redis()
     r.ping()
 except redis.ConnectionError:
     exit('Failed to connect to Redis, terminating.')
-"""
 
 # Change title to host name to demo NLB
 if app.config['SHOWHOST'] == "true":
